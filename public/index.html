@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roommate Video Chat</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Roommate Video Chat</h1>
+
+      <div id="start-screen" class="screen active">
+        <button id="start-btn" class="btn">Start Chat</button>
+      </div>
+
+      <div id="waiting-screen" class="screen">
+        <p>Looking for a roommate to chat with...</p>
+        <button id="cancel-btn" class="btn secondary">Cancel</button>
+      </div>
+
+      <div id="chat-screen" class="screen">
+        <div class="video-container">
+          <video id="local-video" autoplay muted></video>
+          <video id="remote-video" autoplay></video>
+        </div>
+        <div class="controls">
+          <button id="mute-btn" class="control-btn">Mute</button>
+          <button id="video-btn" class="control-btn">Stop Video</button>
+          <button id="next-btn" class="control-btn">Next</button>
+          <button id="end-btn" class="control-btn end">End Chat</button>
+        </div>
+      </div>
+
+      <div id="disconnected-screen" class="screen">
+        <p>Your roommate has disconnected</p>
+        <button id="restart-btn" class="btn">Find New Roommate</button>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
