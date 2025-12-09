@@ -133,7 +133,9 @@ document.getElementById("mute-btn").addEventListener("click", () => {
   localStream.getAudioTracks().forEach((track) => {
     track.enabled = !muted;
   });
-  document.getElementById("mute-btn").textContent = muted ? "Unmute" : "Mute";
+  document.getElementById("mute-btn").textContent = muted
+    ? "בטל השתקה"
+    : "השתק";
 });
 
 document.getElementById("video-btn").addEventListener("click", () => {
@@ -142,8 +144,8 @@ document.getElementById("video-btn").addEventListener("click", () => {
     track.enabled = !videoStopped;
   });
   document.getElementById("video-btn").textContent = videoStopped
-    ? "Start Video"
-    : "Stop Video";
+    ? "הפעל וידאו"
+    : "עצור וידאו";
 });
 
 document.getElementById("next-btn").addEventListener("click", () => {
