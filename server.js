@@ -10,7 +10,12 @@ const __dirname = dirname(__filename);
 
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server);
+const io = new Server(server, {
+  cors: {
+    origin: "https://roomigel.onrender.com",
+    methods: ["GET", "POST"],
+  },
+});
 
 app.use(express.static(join(__dirname, "public")));
 
